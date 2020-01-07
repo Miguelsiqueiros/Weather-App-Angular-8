@@ -1,0 +1,16 @@
+<div class="col s12" *ngIf="hasLocation">
+  <p>Weather in {{ currentWeather.name }}, {{ currentWeather.sys.country }}</p>
+</div>
+<div class="col s12">
+  <img src="{{ iconUrl }}" />
+  <h3>{{ (currentWeather.main.temp - 274).toFixed(2) }} &#8451;</h3>
+</div>
+<div class="col s12">
+  <p>{{ currentWeather.weather[0].description }}</p>
+</div>
+<div class="col s12">
+  {{ currentTime }}
+</div>
+<div class="col s12">
+  <app-table [weather]="currentWeather"></app-table>
+</div>
