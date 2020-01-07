@@ -4,12 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "config": "node config.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --aot --prod"
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +21,6 @@
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
