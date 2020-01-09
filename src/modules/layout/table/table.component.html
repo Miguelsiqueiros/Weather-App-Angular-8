@@ -1,32 +1,34 @@
-<table>
-  <tbody>
-    <tr>
-      <td>Wind</td>
-      <td>{{ weather.wind.speed }} mph</td>
-    </tr>
-    <tr>
-      <td>Cludiness</td>
-      <td>{{ weather.clouds.all }}</td>
-    </tr>
-    <tr>
-      <td>Pressure</td>
-      <td>{{ weather.main.pressure }} hpa</td>
-    </tr>
-    <tr>
-      <td>Humidity</td>
-      <td>{{ weather.main.humidity }}%</td>
-    </tr>
-    <tr>
-      <td>Sunrise</td>
-      <td>{{ weather.sys.sunrise }}</td>
-    </tr>
-    <tr>
-      <td>Sunset</td>
-      <td>{{ weather.sys.sunset }}</td>
-    </tr>
-    <tr>
-      <td>Geo coords</td>
-      <td>[{{ weather.coord.lon }},{{ weather.coord.lat }}]</td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td>Wind</td>
+        <td>{{ weather.wind.speed }} mph</td>
+      </tr>
+      <tr>
+        <td>Cludiness</td>
+        <td>{{ weather.clouds.all }}</td>
+      </tr>
+      <tr>
+        <td>Pressure</td>
+        <td>{{ weather.main.pressure }} hpa</td>
+      </tr>
+      <tr>
+        <td>Humidity</td>
+        <td>{{ weather.main.humidity }}%</td>
+      </tr>
+      <tr>
+        <td>Sunrise</td>
+        <td>{{ weather.sys.sunrise }}</td>
+      </tr>
+      <tr>
+        <td>Sunset</td>
+        <td>{{ weather.sys.sunset }}</td>
+      </tr>
+      <tr>
+        <td>Geo coords</td>
+        <td>[{{ weather.coord.lon }},{{ weather.coord.lat }}]</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

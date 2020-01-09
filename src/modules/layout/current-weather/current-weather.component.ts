@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { WeatherService } from "src/services/weather.service";
 import { Observable, Observer } from "rxjs";
 import { environment } from "src/environments/environment";
+import { SiblingsService } from "src/services/Siblings.service";
 
 @Component({
   selector: "app-current-weather",
@@ -14,11 +15,16 @@ export class CurrentWeatherComponent implements OnInit {
   currentWeather: any;
   currentTime: any;
   iconUrl: string;
-  constructor(private weatherService: WeatherService) {}
+  coords: {};
+  constructor(
+    private weatherService: WeatherService,
+    private siblingService: SiblingsService
+  ) {}
 
   ngOnInit() {
     this.GetCurrentWeather();
     this.currentTime = new Date();
+    this.siblingService.currentCoords.subscribe(data => (this.coords = data));
   }
 
   GetCurrentWeather() {
@@ -26,6 +32,10 @@ export class CurrentWeatherComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
         this.userCoordinates = position;
         this.hasLocation = true;
+        this.siblingService.updateCoords({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude
+        });
         this.weatherService
           .GetCurrentWeather(
             this.userCoordinates.coords.latitude,

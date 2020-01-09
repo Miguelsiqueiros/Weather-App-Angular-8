@@ -17,7 +17,9 @@ export class WeatherService {
     );
   }
 
-  GetDailyWeather(lat: number, lon: number) {}
-
-  GetWeekly(lat: number, lon: number) {}
+  GetFiveDayForecast(lat: number, lon: number) {
+    return this.httpClient.get(
+      `${environment.API_URL}forecast/?lat=${lat}&lon=${lon}&appid=${environment.API_KEY}`
+    );
+  }
 }

@@ -8,9 +8,11 @@ import { CardComponent } from "./card/card.component";
 import { CurrentWeatherComponent } from "./current-weather/current-weather.component";
 import { TableComponent } from "./table/table.component";
 import { TabComponent } from "./tab/tab.component";
+import { ChartComponent } from "./chart/chart.component";
+import { ChartsModule } from "ng2-charts";
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, ChartsModule],
   declarations: [
     NavbarComponent,
     FooterComponent,
@@ -19,7 +21,8 @@ import { TabComponent } from "./tab/tab.component";
     CardComponent,
     CurrentWeatherComponent,
     TableComponent,
-    TabComponent
+    TabComponent,
+    ChartComponent
   ],
   exports: [
     NavbarComponent,
@@ -29,7 +32,8 @@ import { TabComponent } from "./tab/tab.component";
     CardComponent,
     CurrentWeatherComponent,
     TableComponent,
-    TabComponent
+    TabComponent,
+    ChartComponent
   ]
 })
 export class LayoutModule {}
